@@ -1,0 +1,8 @@
+.book {
+    margin: 3px;
+    border: 2px #eee;
+    box-shadow: 0 3px 3px #ccc;
+    width: 400px;
+    padding: 5px;
+    display: inline-block;
+}

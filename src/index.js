@@ -1,13 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Book } from './book';
+
+class App extends React.Component {
+  state = {
+    books: [{
+      id: '123',
+      name: 'Let us C',
+      author: 'Yashavanth Kanetkar'
+    }, {
+      id: '456',
+      name: 'The Monk who sold his Ferrari',
+      author: 'Robin Sharma'
+    }, {
+      id: '789',
+      name: 'The Infinite Game',
+      author: 'Simon Sinek'
+    }]
+  };
+  render() {
+    return <>
+      {
+        this.state.books.map(book => {
+          return <Book key={book.id} name={book.name} author={book.author} />
+        })
+      }
+    </>;
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
 
